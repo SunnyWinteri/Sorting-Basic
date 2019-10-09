@@ -1,40 +1,21 @@
 #include "SortTestHelper.h"
 #include "SelectionSort.h"
 #include "InsertionSort.h"
+#include "BubbleSort.h"
 int main(){
 	int n = 10000;
-	int *arr = SortTestHelper::generateRandomArray(n,0,n);
+	int *arr = SortTestHelper::generateRandomArray(n, 0, n);
 	int *arr2 = SortTestHelper::copyIntArray(arr, n);
+	int *arr3 = SortTestHelper::copyIntArray(arr, n);
+	int *arr4 = SortTestHelper::copyIntArray(arr, n);
+	int *arr5 = SortTestHelper::copyIntArray(arr, n);
+	int *arr6 = SortTestHelper::copyIntArray(arr, n);
 	SortTestHelper::testSort("Selection Sort",selectionSort,arr,n);
 	SortTestHelper::testSort("Insertion Sort",insertionSort,arr2,n);
-
-	//selectionSort(arr,n);
-	//SortTestHelper::printArray(arr, n);
-	//SortTestHelper::testSort("Selection Sort", selectionSort, arr, n);
-	//delete[] arr;
-/*
-	for(int i = 0 ; i < n ; i ++)
-		cout << arr[i] << " ";
-	cout << endl;
-*/
-	
-/*
-    int a[10] = {10,9,8,7,6,5,4,3,2,1};
-    selectionSort(a , 10);
-    for(int i = 0 ; i < 10 ; i ++)
-    {
-        cout << a[i] <<" ";    
-    }
-	cout << endl;
-
-	float b[5] = {5.5,4.4,3.3,2.2,1.1};
-	selectionSort(b , 5);
-	for(int i = 0 ; i < 5 ; i ++)
-    {
-        cout << b[i] <<" ";    
-    }
-	cout << endl;
-*/
+	SortTestHelper::testSort("Bubble Sort",bubbleSort,arr3,n);
+	SortTestHelper::testSort("Bubble Sort 2",bubbleSort2,arr4,n);
+	//SortTestHelper::testSort("Bubble Sort 3",bubbleSort3,arr5,n);
+	//SortTestHelper::testSort("Bubble Sort 4",bubbleSort4,arr6,n);
 	return 0;
 }
 
